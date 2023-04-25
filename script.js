@@ -76,13 +76,6 @@ function myFunction() {
 }
 
 
-function imgchange(smallimg)
-{
-    var fullimg=document.getElementById("imgbox");
-    fullimg.src=smallimg.src;
-}
- function pricechange(){
-    var x=document.getElementById("size").value;
-    document.getElementById("change").innerHTML=x;
- }
+
+ 
 

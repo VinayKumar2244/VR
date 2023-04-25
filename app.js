@@ -7,12 +7,25 @@ let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 let btnopt=document.querySelector('.btnopt')
 
+
+function imgchange(smallimg)
+{
+    var fullimg=document.getElementById("imgbox");
+    fullimg.src=smallimg.src;
+}
+
 openShopping.addEventListener('click', ()=>{
     body.classList.add('active');
 })
 closeShopping.addEventListener('click', ()=>{
     body.classList.remove('active');
 })
+
+function pricechange(){
+    var x=document.getElementById("size").value;
+    document.getElementById("change").innerHTML=x;
+ }
+
 
 let products = [
     {
