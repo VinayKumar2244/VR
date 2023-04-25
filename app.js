@@ -5,6 +5,7 @@ let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
+let btnopt=document.querySelector('.btnopt')
 
 openShopping.addEventListener('click', ()=>{
     body.classList.add('active');
@@ -18,7 +19,7 @@ let products = [
         id: 1,
         name: 'MATTRESS',
         image: '1.PNG',
-        price: 36500
+        price: 12000
     },
     {
         id: 2,
@@ -51,7 +52,15 @@ let products = [
         price: 12000
     }
 ];
-
+let sample = [
+    {
+        id: 7,
+        name: 'MATTRES',
+        image: 'p6.WEBP',
+        price: 12000
+    },
+        
+];
 
 let listCards  = [];
 
@@ -66,12 +75,31 @@ function initApp(){
             <button onclick="addToCard(${key})">Add To Card</button>`;
         list.appendChild(newDiv);
     })
+    sample.forEach((value, key) =>{
+        let ct = document.createElement('div');
+        ct.classList.add('crt');
+        ct.innerHTML = `
+            <img src="image/${value.image}">
+            <div class="title">${value.name}</div>
+            <div class="price">${value.price.toLocaleString()}</div>
+            <button onclick="addTCard(${key})">Add To Card</button>`;
+        btnopt.appendChild(ct);
+    })
 }
 initApp();
 function addToCard(key){
     if(listCards[key] == null){
         // copy product form list to list card
         listCards[key] = JSON.parse(JSON.stringify(products[key]));
+
+        listCards[key].quantity = 1;
+    }
+    reloadCard();
+}
+function addTCard(key){
+    if(listCards[key] == null){
+        // copy product form list to list card
+        listCards[key] = JSON.parse(JSON.stringify(sample[key]));
         listCards[key].quantity = 1;
     }
     reloadCard();
@@ -113,7 +141,4 @@ function changeQuantity(key, quantity){
         listCards[key].price = quantity * products[key].price;
     }
     reloadCard();
-}
-function addtocart(){
-    products.push()
 }
