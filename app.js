@@ -120,6 +120,7 @@ function addTCard(key){
 
 
 
+
 function reloadCard(){
     listCard.innerHTML = '';
     let count = 0;
