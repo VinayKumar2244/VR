@@ -116,12 +116,12 @@
     align-items: center;
 }
 .closeShopping{
-    padding-left: 45%;
+    margin-left: 45%;
     color:#faf9f9;
     
 }
 .closeShopping img{
-    padding-left: 20px;
+    margin-left: 20px;
     width: 80px;
 
     
